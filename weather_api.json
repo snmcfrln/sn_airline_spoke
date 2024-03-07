@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "ACME Weather Forecast",
+    "title": "Test Weather Forecast",
     "description": "",
     "version": "latest"
   },
