@@ -1,0 +1,338 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ACME Weather Forecast",
+    "description": "",
+    "version": "latest"
+  },
+  "externalDocs": {
+    "url": ""
+  },
+  "servers": [
+    {
+      "url": "https://aeutahdevdemo.service-now.com/"
+    }
+  ],
+  "paths": {
+    "/api/snc/acme_weather_forecast/current/country/{country}/city/{city}": {
+      "get": {
+        "title":"Active Weather City",
+        "description": "Returns current weather of City",
+        "operationId": "active_weather_city",
+        "parameters": [
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "city",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {},
+            "example": "USA"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {},
+            "example": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "windspeed": {
+                      "type": "string",
+                      "description": "Wind Speed."
+                    },
+                    "winddirection": {
+                      "type": "string",
+                      "description": "Direction of wind flow."
+                    },
+                    "temp": {
+                      "type": "string",
+                      "description": "The current temperature in F."
+                    },
+                    "humidity": {
+                      "type": "string",
+                      "description": "Humidity level in percent"
+                    },
+                    "rain": {
+                      "type": "string",
+                      "description": "Rain prediction"
+                    }
+                  }
+                }
+              },
+              "application/xml": {},
+              "text/xml": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/snc/acme_weather_forecast/current/{longitude}/{latitude}": {
+      "get": {
+        "title":"Active Weather Point",
+        "description": "Returns current weather of Point",
+        "operationId": "active_weather_point",
+        "parameters": [
+          {
+            "name": "longitude",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "latitude",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "latitude",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {},
+            "example": "48.8566"
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "description": "longitude in number format",
+            "required": false,
+            "schema": {},
+            "example": "48.8566"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "windspeed": {
+                      "type": "string",
+                      "description": "Wind Speed."
+                    },
+                    "winddirection": {
+                      "type": "string",
+                      "description": "Direction of wind flow."
+                    },
+                    "temp": {
+                      "type": "string",
+                      "description": "The current temperature in F."
+                    },
+                    "humidity": {
+                      "type": "string",
+                      "description": "Humidity level in percent"
+                    },
+                    "rain": {
+                      "type": "string",
+                      "description": "Rain prediction"
+                    }
+                  }
+                }
+              },
+              "application/xml": {},
+              "text/xml": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/snc/acme_weather_forecast/historical/{timestamp}/country/{country}/city/{city}": {
+      "get": {
+        "title":"Historical Weather City",
+        "description": "Returns historical weather of City",
+        "operationId": "historical_weather_city",
+        "parameters": [
+          {
+            "name": "timestamp",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "country",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "city",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {},
+            "example": ""
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {},
+            "example": "USA"
+          },
+          {
+            "name": "timestamp",
+            "in": "query",
+            "description": "timestamp in epoch in gmt",
+            "required": false,
+            "schema": {},
+            "example": "1689674226"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "windspeed": {
+                      "type": "string",
+                      "description": "Wind Speed."
+                    },
+                    "winddirection": {
+                      "type": "string",
+                      "description": "Direction of wind flow."
+                    },
+                    "temp": {
+                      "type": "string",
+                      "description": "The current temperature in F."
+                    },
+                    "humidity": {
+                      "type": "string",
+                      "description": "Humidity level in percent"
+                    },
+                    "rain": {
+                      "type": "string",
+                      "description": "Rain prediction"
+                    }
+                  }
+                }
+              },
+              "application/xml": {},
+              "text/xml": {}
+            }
+          }
+        }
+      }
+    },
+    "/api/snc/acme_weather_forecast/historical/{timestamp}/{longitude}/{latitude}": {
+      "get": {
+        "title":"Historical Weather Point",
+        "description": "Returns historical weather of point",
+        "operationId": "historical_weather_point",
+        "parameters": [
+          {
+            "name": "timestamp",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "longitude",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "latitude",
+            "in": "path",
+            "required": true,
+            "schema": {}
+          },
+          {
+            "name": "timestamp",
+            "in": "query",
+            "description": "timestamp in epoch in gmt",
+            "required": false,
+            "schema": {},
+            "example": "1689674226"
+          },
+          {
+            "name": "latitude",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {},
+            "example": "48.8566"
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "description": "longitude in number format",
+            "required": false,
+            "schema": {},
+            "example": "48.8566"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "windspeed": {
+                      "type": "string",
+                      "description": "Wind Speed."
+                    },
+                    "winddirection": {
+                      "type": "string",
+                      "description": "Direction of wind flow."
+                    },
+                    "temp": {
+                      "type": "string",
+                      "description": "The current temperature in F."
+                    },
+                    "humidity": {
+                      "type": "string",
+                      "description": "Humidity level in percent"
+                    },
+                    "rain": {
+                      "type": "string",
+                      "description": "Rain prediction"
+                    }
+                  }
+                }
+              },
+              "application/xml": {},
+              "text/xml": {}
+            }
+          }
+        }
+      }
+    }
+  }  
+}
