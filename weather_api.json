@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Test Weather Forecast",
+    "title": "Syd Airport Weather Forecast",
     "description": "",
     "version": "latest"
   },
